@@ -98,7 +98,7 @@ JWT_SECRET=your_jwt_secret
 
 ```bash
 cd server
-npm start
+node server.js
 ```
 
 #### Frontend
