@@ -1,8 +1,8 @@
-# 📚 Gestion App – Fullstack React, Node.js & MySQL
+# 📚 Gestion Books – Fullstack React, Node.js & MySQL
 
 ## Aperçu du projet
 
-**Gestion App** est une application web complète permettant la gestion de livres et d’utilisateurs, avec authentification sécurisée, interface moderne, et base de données MySQL.  
+**Gestion Books** est une application web complète permettant la gestion de livres et d’utilisateurs, avec authentification sécurisée, interface moderne, et base de données MySQL.  
 Pensée pour être simple à installer et à utiliser, elle s’appuie sur un backend Node.js/Express, un frontend React, et une base de données MySQL (XAMPP/phpMyAdmin).
 
 ---
@@ -51,7 +51,7 @@ Pensée pour être simple à installer et à utiliser, elle s’appuie sur un ba
 
 ```bash
 git clone https://github.com/Developer17898/my-app-fullstack-react-node.git
-cd my-app-fullstack-react-node
+cd my-app-fullstack
 ```
 
 ### 2. Installer les dépendances
