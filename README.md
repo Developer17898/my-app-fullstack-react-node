@@ -1,4 +1,4 @@
-# 📚 Gestion Books – Fullstack React, Node.js & MySQL
+# 📚 Gestion des livres– Fullstack React, Node.js & MySQL
 
 ## Aperçu du projet
 
