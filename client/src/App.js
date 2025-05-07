@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, NavLink, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Register from './components/Register';
@@ -10,6 +10,7 @@ import './components/styles.css';
 
 function Navbar({ token, setToken }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogout = () => {
     setToken('');
@@ -17,19 +18,29 @@ function Navbar({ token, setToken }) {
     navigate('/');
   };
 
+  // Afficher Connexion/Inscription sur la page d'accueil, sinon afficher Déconnexion si connecté
+  const isHome = location.pathname === '/';
+
   return (
     <div className="navbar">
       <div>
         <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>Accueil</NavLink>
       </div>
       <div className="navbar-links">
-        {!token ? (
+        {isHome ? (
           <>
             <NavLink to="/login" className={({ isActive }) => isActive ? "active-link" : ""}>Connexion</NavLink>
             <NavLink to="/register" className={({ isActive }) => isActive ? "active-link" : ""}>Inscription</NavLink>
           </>
         ) : (
-          <button onClick={handleLogout} className="logout">Déconnexion</button>
+          token ? (
+            <button onClick={handleLogout} className="logout">Déconnexion</button>
+          ) : (
+            <>
+              <NavLink to="/login" className={({ isActive }) => isActive ? "active-link" : ""}>Connexion</NavLink>
+              <NavLink to="/register" className={({ isActive }) => isActive ? "active-link" : ""}>Inscription</NavLink>
+            </>
+          )
         )}
       </div>
     </div>
@@ -40,7 +51,6 @@ function Accueil() {
   return (
     <div className="home-container">
       <img src="https://www.neh.gov/sites/default/files/2018-06/openbooks.jpg" alt="Accueil" className="home-image" />
-  
     </div>
   );
 }
